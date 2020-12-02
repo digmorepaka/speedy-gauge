@@ -95,9 +95,9 @@ void clearRX() {
  
 
  
-void drawData() { //Setup the mock area for drawing this info on the OLED
+void drawData() { //write data to LEDs based on RPM
   if(rpm < 1000) {
-    leds[0] = CRGB::Black;
+    leds[0] = CRGB::Black; //off
     leds[1] = CRGB::Black;
     leds[2] = CRGB::Black;
     leds[3] = CRGB::Black;
@@ -106,7 +106,7 @@ void drawData() { //Setup the mock area for drawing this info on the OLED
    
   }
     if(200 < rpm && rpm < 600) {
-    leds[0] = CRGB::Green;
+    leds[0] = CRGB::Green; //cranking
     leds[1] = CRGB::Green;
     leds[2] = CRGB::Green;
     leds[3] = CRGB::Green;
@@ -116,7 +116,7 @@ void drawData() { //Setup the mock area for drawing this info on the OLED
   }
  
   if(rpm > 600){
-    leds[0] = CRGB::Black;
+    leds[0] = CRGB::Black; //idle above 600 rpm below 1000
     leds[1] = CRGB::Black;
     leds[2] = CRGB::Black;
     leds[3] = CRGB::Black;
@@ -221,7 +221,7 @@ void drawData() { //Setup the mock area for drawing this info on the OLED
    
   }
   
-  if(rpm > 6000) {
+  if(rpm > 6000) { 
     leds[0] = CRGB::Green;
     leds[1] = CRGB::Yellow;
     leds[2] = CRGB::Yellow;
@@ -234,8 +234,8 @@ void drawData() { //Setup the mock area for drawing this info on the OLED
   /*Serial.println("RPM:" + String(rpm));
   Serial.println("RAWLOW" + String(speedyResponse[14]));
   Serial.println("RAWHIGH" + String(speedyResponse[15]));
-   */
-  display.clearDisplay();
+   */ 
+  display.clearDisplay(); //display RPM
   display.setTextSize(1);           
   display.setCursor(0,0);
   display.print("rpm");
@@ -243,14 +243,14 @@ void drawData() { //Setup the mock area for drawing this info on the OLED
   display.setCursor(23,0);
   display.print(rpm, 1);
 
-  display.setTextSize(1);            
+  display.setTextSize(1);            //display status
   display.setCursor(0,15);
   display.print("stat");
   display.setTextSize(2);
   display.setCursor(25,15);
   display.print(state, 1);
   
-  display.setTextSize(1);            
+  display.setTextSize(1);            //display coolant temp
   display.setCursor(0,25);
   display.print("clt");
   display.setTextSize(2);
@@ -265,8 +265,8 @@ void drawData() { //Setup the mock area for drawing this info on the OLED
   display.setCursor(80,0);
   display.print(mapData);*/
   //delay(25);  // this delay was placed in order for the screen to not populate at a speed that is inhumanly readable
-  FastLED.show();
-  display.display();
+  FastLED.show(); //set leds
+  display.display(); //set display
 }
 void processData() {  // necessary conversion for the data before sending to screen
  
@@ -279,7 +279,7 @@ void processData() {  // necessary conversion for the data before sending to scr
   afrConv = afr/10;
   
 }
-/*
+/* //code from a project i don't remember the link to, keeping it here as a frame of reference for communication
 void buildArray(){
       for (i = 0; i <73; i++){
       response[i] = mySerial.read();
