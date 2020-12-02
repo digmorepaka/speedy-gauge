@@ -327,10 +327,8 @@ Wire Wire Line
 	4050 7100 4250 7100
 Wire Wire Line
 	4850 7100 4950 7100
-Text GLabel 850  7100 0    50   Input ~ 0
+Text GLabel 5650 6800 2    50   Input ~ 0
 LED_DIN
-Wire Wire Line
-	850  7100 1050 7100
 Wire Wire Line
 	3700 1400 3700 1450
 Wire Wire Line
@@ -850,4 +848,50 @@ Wire Wire Line
 Connection ~ 7050 4900
 Wire Wire Line
 	7050 4900 7050 5450
+Wire Wire Line
+	5650 6800 5600 6800
+Wire Wire Line
+	5600 6800 5600 7100
+Wire Wire Line
+	5600 7100 5550 7100
+Wire Notes Line style solid
+	6900 6400 6900 7650
+Wire Notes Line style solid
+	6900 7650 750  7650
+Wire Notes Line style solid
+	750  7650 750  6400
+Wire Notes Line style solid
+	750  6400 6900 6400
+Text Notes 800  6350 0    50   ~ 0
+Digitally controlled LEDs, kicad pinouts are wrong, DIN is actually DOUT on the physical part.
+Wire Notes Line style solid
+	2050 2850 3750 2850
+Wire Notes Line style solid
+	3750 2850 3750 4050
+Wire Notes Line style solid
+	3750 4050 2050 4050
+Wire Notes Line style solid
+	2050 4050 2050 2850
+Text Notes 2100 2800 0    50   ~ 0
+Oscilator for MCU
+Wire Notes Line
+	7850 2300 7850 2900
+Wire Notes Line
+	7850 2900 7300 2900
+Wire Notes Line
+	7300 2900 7300 2300
+Wire Notes Line
+	7300 2300 7850 2300
+Text Notes 7250 2250 0    50   ~ 0
+Do not populate, frame of reference only
+Wire Notes Line style solid
+	2850 1150 5750 1150
+Wire Notes Line style solid
+	5750 1150 5750 2000
+Wire Notes Line style solid
+	5750 2000 2850 2000
+Wire Notes Line style solid
+	2850 2000 2850 1150
+Text Notes 2900 1100 0    50   ~ 0
+Power supply section
 $EndSCHEMATC
