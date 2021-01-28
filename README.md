@@ -9,10 +9,10 @@
 
 
 ## TODO
--Display quality, I will be testing ST7798 IPS displays for their low temperature response
--Detailed README
--Better data acquisition
--Support for use as AUX GPIO
+* Display quality, I will be testing ST7798 IPS displays for their low temperature response
+* Detailed README
+* Better data acquisition
+* Support for use as AUX GPIO
 
 
 
