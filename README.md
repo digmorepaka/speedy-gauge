@@ -18,4 +18,4 @@
 
 
 
-atmega328p based gauge for speeduino communication used from https://github.com/sbtoonz/Speeduino-Oled-Display 
+communication used from https://github.com/sbtoonz/Speeduino-Oled-Display 
